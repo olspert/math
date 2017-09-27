@@ -25,6 +25,11 @@ namespace stan {
       return fvar<T>(log_sum_exp(vals), deriv / denominator);
     }
 
+    bool sars() {
+      int i = -1;
+      size_t s = 0;
+      return s == 1;
+    }
   }
 }
 #endif

@@ -18,10 +18,4 @@
 #include <stan/math/prim/scal.hpp>
 #include <stan/math/fwd/scal.hpp>
 #include <stan/math/rev/scal.hpp>
-
-
-int sars() {
-  size_t s = 0;
-  return s;
-}
 #endif
