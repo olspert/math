@@ -6,8 +6,8 @@
 #include <vector>
 
 template <typename F, int R, int C>
-static inline Eigen::Matrix<stan::math::var, R, C>
-build_rev_matrix(const Eigen::Matrix<stan::math::var, R, C>& x) {
+static inline Eigen::Matrix<stan::math::var, R, C> build_rev_matrix(
+    const Eigen::Matrix<stan::math::var, R, C>& x) {
   using Eigen::Matrix;
   using std::vector;
   using stan::math::var;
@@ -15,8 +15,7 @@ build_rev_matrix(const Eigen::Matrix<stan::math::var, R, C>& x) {
   Matrix<var, R, C> var_matrix(x.rows(), x.cols());
   vector<double> inputs = F::valid_inputs();
   // Fills matrix with copies of valid_input values
-  for (int i = 0; i < x.size(); ++i)
-    var_matrix(i) = inputs[i % inputs.size()];
+  for (int i = 0; i < x.size(); ++i) var_matrix(i) = inputs[i % inputs.size()];
   return var_matrix;
 }
 

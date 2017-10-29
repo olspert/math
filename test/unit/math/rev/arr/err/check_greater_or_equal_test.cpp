@@ -15,8 +15,7 @@ TEST(AgradRevErrorHandlingScalar, CheckFiniteVarCheckVectorized) {
   const std::string function = "check_greater_or_equal";
   vector<var> a;
 
-  for (int i = 0; i < N; ++i)
-    a.push_back(var(i));
+  for (int i = 0; i < N; ++i) a.push_back(var(i));
 
   size_t stack_size = stan::math::ChainableStack::var_stack_.size();
 

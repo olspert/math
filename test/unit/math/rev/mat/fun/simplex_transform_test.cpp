@@ -18,8 +18,7 @@ TEST(probTransform, simplex_jacobian) {
   y << a, b, c;
 
   var lp(0);
-  Matrix<var, Dynamic, 1> x
-    = stan::math::simplex_constrain(y, lp);
+  Matrix<var, Dynamic, 1> x = stan::math::simplex_constrain(y, lp);
 
   vector<var> indeps;
   indeps.push_back(a);
@@ -36,8 +35,7 @@ TEST(probTransform, simplex_jacobian) {
 
   Matrix<double, Dynamic, Dynamic> J(3, 3);
   for (int m = 0; m < 3; ++m)
-    for (int n = 0; n < 3; ++n)
-      J(m, n) = jacobian[m][n];
+    for (int n = 0; n < 3; ++n) J(m, n) = jacobian[m][n];
 
   double det_J = J.determinant();
   double log_det_J = log(det_J);

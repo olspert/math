@@ -12,8 +12,7 @@ TEST(AgradRevErrorHandlingScalar, CheckBoundedVarCheckVectorized) {
   const std::string function = "check_bounded";
   vector<var> a;
 
-  for (int i = 0; i < N; ++i)
-    a.push_back(var(i));
+  for (int i = 0; i < N; ++i) a.push_back(var(i));
 
   size_t stack_size = stan::math::ChainableStack::var_stack_.size();
 

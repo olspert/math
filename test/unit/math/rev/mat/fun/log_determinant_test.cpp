@@ -27,8 +27,7 @@ TEST(AgradRevMatrix, log_determinant_diff) {
 
   EXPECT_FLOAT_EQ(det1.val(), det2.val());
   EXPECT_EQ(g1.size(), g2.size());
-  for (size_t i = 0; i < g1.size(); ++i)
-    EXPECT_FLOAT_EQ(g1[i], g2[i]);
+  for (size_t i = 0; i < g1.size(); ++i) EXPECT_FLOAT_EQ(g1[i], g2[i]);
 }
 
 TEST(AgradRevMatrix, log_determinant) {

@@ -15,7 +15,7 @@ using Eigen::Matrix;
  * pass a templated function as an argument)
  */
 struct normal_rng_wrapper {
-  template<typename T1, typename T2, typename T3>
+  template <typename T1, typename T2, typename T3>
   auto operator()(const T1& mean, const T2& sd, T3& rng) const {
     return stan::math::normal_rng(mean, sd, rng);
   }

@@ -11,13 +11,11 @@ TEST(AgradMixMatrix, value_of_rec) {
 
   vector<double> a_vals;
 
-  for (size_t i = 0; i < 10; ++i)
-    a_vals.push_back(i + 1);
+  for (size_t i = 0; i < 10; ++i) a_vals.push_back(i + 1);
 
   vector<double> b_vals;
 
-  for (size_t i = 10; i < 15; ++i)
-    b_vals.push_back(i + 1);
+  for (size_t i = 10; i < 15; ++i) b_vals.push_back(i + 1);
 
   Eigen::Matrix<fvar<var>, 2, 5> fv_a;
   ::fill(a_vals, fv_a);

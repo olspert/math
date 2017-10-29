@@ -303,5 +303,4 @@
 
 #include <stan/math/prim/arr.hpp>
 
-
 #endif
