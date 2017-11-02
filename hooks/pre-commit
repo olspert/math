@@ -36,6 +36,8 @@ then
   # set the field separator to new line
   IFS=$'\n'
 
+  echo "Files formatted:"
+
   for line in $(git status -s --porcelain)
   do
     # if the file is added or modified
@@ -45,11 +47,13 @@ then
       if [[ $line == *.hpp || $line == *.cpp ]]
       then
         # format the file
-        echo "Formatting $(pwd)/${line:3}"
-        clang-format -i $(pwd)/${line:3}
+        file=$(pwd)/${line:3}
+        clang-format -i $file
+
+        git diff --name-only $file
 
         # and then add the file (so that any formatting changes get committed)
-        git add $(pwd)/${line:3}
+        git add $file
       fi
     fi
   done
